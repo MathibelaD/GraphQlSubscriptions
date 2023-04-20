@@ -1,8 +1,8 @@
 require("dotenv").config();
 const mongUrl = process.env.MONGODB;
 const express = require("express");
-const typeDefs = require("./graphql/typeDefs");
-const resolvers = require("./graphql/resolvers");
+const typeDefs = require("./graphql/typeDefs.js");
+const resolvers = require("./graphql/resolvers.js");
 const { createServer } = require("http");
 const {makeExecutableSchema } = require("@graphql-tools/schema");
 const {SubscriptionServer} = require("subscriptions-transport-ws");

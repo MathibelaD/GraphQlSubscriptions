@@ -1,19 +1,22 @@
 const {gql} = require('apollo-server');
 
-const typeDefs = gql`
+module.exports = gql`
     type Message {
     text: String
     createdBy:String
     }
+
     type Query {
-        
+        message(id: ID!): Message
     }
-    type MessageInput {
+
+    input MessageInput {
     text: String
     username: String
     }
+
     type Mutation {
-    createdMessage(messageInput: MessageInput) : Message!
+        createMessage(messageInput: MessageInput) : Message!
     }
 
     type Subscription {
@@ -21,4 +24,4 @@ const typeDefs = gql`
     }
 `
 
-module.exports = typeDefs
+// module.exports = typeDefs
